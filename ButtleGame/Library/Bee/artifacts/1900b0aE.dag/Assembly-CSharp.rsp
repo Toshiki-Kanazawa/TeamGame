@@ -344,6 +344,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/Title.cs"
+"Assets/_K_Project/PlayerMove.cs"
 "Assets/_M_Project/01_Scripts/HSV_Controler.cs"
 "Assets/_M_Project/01_Scripts/TestPlayer_HSV_Controler.cs"
 "Assets/_M_Project/01_Scripts/Test_Charactor_Controler.cs"
