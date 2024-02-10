@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMove_CameraDir : MonoBehaviour
 {
@@ -15,16 +16,27 @@ public class PlayerMove_CameraDir : MonoBehaviour
 
     private Rigidbody rb;
 
+    private Inputs input;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+
+        input = new Inputs();
+
+        input.Enable();
+    }
+
+    private void OnDestroy()
+    {
+        input?.Dispose();
     }
 
     // Update is called once per frame
     void Update()
     {
-        inputHorizontal = Input.GetAxis("Horizontal");
-        inputVertical = Input.GetAxis("Vertical");
+        inputHorizontal = input.Player.Look.ReadValue<Vector2>().x;
+        inputVertical = input.Player.Look.ReadValue<Vector2>().y;
 
         // カメラの方向から X-Z平面の単位ベクトルを取得
         //Vector3 n_CameraForward = Vector3.Scale(mainCamera.transform.forward, new Vector3(1.0f, 0.0f, 1.0f)).normalized;

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 // カメラの方向を基準に動作する プレイヤーの移動 の挙動を実装します
-//
 
 public class PlayerMove : MonoBehaviour
 {
@@ -18,6 +17,8 @@ public class PlayerMove : MonoBehaviour
 
     // 自身のコンポーネント
     private Rigidbody rb;
+
+    Inputs input;
 
     [Header("基準にするカメラ")]
     public Camera mainCamera;
@@ -56,6 +57,10 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        input = new Inputs();
+
+        input.Enable();
+
         // リジッドボディを代入
         rb = this.GetComponent<Rigidbody>();
 
@@ -74,21 +79,24 @@ public class PlayerMove : MonoBehaviour
         isAttack = false;
         isLockon = false;
         eMoveDir = eMoveDirection.None;
-
 }
-
-void Update()
+    private void OnDestroy()
     {
-        inputHorizontal = Input.GetAxis("Horizontal");
-        inputVertical = Input.GetAxis("Vertical");
+        input?.Dispose();
+    }
+
+    void Update()
+    {
+        inputHorizontal = input.Player.Move.ReadValue<Vector2>().x;
+        inputVertical = input.Player.Move.ReadValue<Vector2>().y;
 
         // アクション
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (input.Player.Jump.triggered)
         {
             // rigidbody の y軸 に対してジャンプ力を加算する
             Action_Jump();
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(input.Player.Fire.triggered)
         {
             Action_Attack();
         }
