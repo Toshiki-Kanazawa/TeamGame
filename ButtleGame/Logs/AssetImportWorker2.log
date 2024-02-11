@@ -15,7 +15,7 @@ C:/git projects/ButtleGame
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-51413
+55556
 Successfully changed project path to: C:/git projects/ButtleGame
 C:/git projects/ButtleGame
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,12 +47,12 @@ C:/git projects/ButtleGame
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [7184] Host "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 1434260586 [EditorId] 1434260586 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NM50HR6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [21632] Host "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 945782543 [EditorId] 945782543 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NM50HR6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [7184] Host "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 1434260586 [EditorId] 1434260586 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NM50HR6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [21632] Host "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 945782543 [EditorId] 945782543 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NM50HR6) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
-Refreshing native plugins compatible for Editor in 78.95 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 146.84 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.30f1 (b4360d7cdac4)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/Resources/UnitySubsystems
@@ -68,90 +68,90 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56904
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005253 seconds.
+Registered in 0.007486 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.36 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 101.66 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.683 seconds
+- Completed reload, in  0.898 seconds
 Domain Reload Profiling:
-	ReloadAssembly (683ms)
-		BeginReloadAssembly (113ms)
+	ReloadAssembly (898ms)
+		BeginReloadAssembly (157ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (466ms)
-			LoadAssemblies (111ms)
+		EndReloadAssembly (589ms)
+			LoadAssemblies (153ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (117ms)
+			SetupTypeCache (149ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (274ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (346ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (83ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (125ms)
-				ProcessInitializeOnLoadMethodAttributes (53ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (102ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (167ms)
+				ProcessInitializeOnLoadMethodAttributes (66ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004379 seconds.
+Registered in 0.006586 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 80.84 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 83.88 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  1.645 seconds
+- Completed reload, in  2.015 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1646ms)
-		BeginReloadAssembly (123ms)
+	ReloadAssembly (2016ms)
+		BeginReloadAssembly (189ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (8ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (1411ms)
-			LoadAssemblies (97ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (1689ms)
+			LoadAssemblies (143ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (321ms)
+			SetupTypeCache (385ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (79ms)
-			SetupLoadedEditorAssemblies (853ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (1074ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (81ms)
-				BeforeProcessingInitializeOnLoad (85ms)
-				ProcessInitializeOnLoadAttributes (651ms)
-				ProcessInitializeOnLoadMethodAttributes (21ms)
-				AfterProcessingInitializeOnLoad (9ms)
+				RefreshPlugins (84ms)
+				BeforeProcessingInitializeOnLoad (107ms)
+				ProcessInitializeOnLoadAttributes (845ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (10ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.49 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3451 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 25 unused Assets / (47.0 KB). Loaded Objects now: 3914.
-Memory consumption went from 124.2 MB to 124.1 MB.
-Total: 4.602000 ms (FindLiveObjects: 0.525000 ms CreateObjectMapping: 0.246700 ms MarkObjects: 3.708000 ms  DeleteObjects: 0.120800 ms)
+Memory consumption went from 124.2 MB to 124.2 MB.
+Total: 6.101100 ms (FindLiveObjects: 0.522800 ms CreateObjectMapping: 0.264900 ms MarkObjects: 5.198400 ms  DeleteObjects: 0.113400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -168,86 +168,149 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 300263.945064 seconds.
-  path: Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/Die01_Stay_SwordAndShield.fbx
-  artifactKey: Guid(0e112f1584fcccd4face09e3b7156832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 375930.351351 seconds.
+  path: Assets/AltonGames
+  artifactKey: Guid(a66eae1ef76e1b449b1edeaadfa2762b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/Die01_Stay_SwordAndShield.fbx using Guid(0e112f1584fcccd4face09e3b7156832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdc4cb030e6c5011370e6558438a4c87') in 0.229888 seconds 
-Number of asset objects unloaded after import = 111
+Start importing Assets/AltonGames using Guid(a66eae1ef76e1b449b1edeaadfa2762b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57f531e56a5d96cda23630dafa761201') in 0.023138 seconds 
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/GetHit01_SwordAndShield.fbx
-  artifactKey: Guid(c98546b8d8d3ab046afc8acfe706361f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 14.511128 seconds.
+  path: Assets/AltonGames/nature/Textures
+  artifactKey: Guid(cee4efd7a56ddd44992d502447345d3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/GetHit01_SwordAndShield.fbx using Guid(c98546b8d8d3ab046afc8acfe706361f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '895ec70068429c8cddb397cf998c217d') in 0.075703 seconds 
-Number of asset objects unloaded after import = 111
+Start importing Assets/AltonGames/nature/Textures using Guid(cee4efd7a56ddd44992d502447345d3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51d63c1b3f3f0e615767e083bac89683') in 0.014085 seconds 
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/InPlace/JumpFull_Spin_InPlace_SwordAndShield.fbx
-  artifactKey: Guid(b5bfe52205c4a874991178073ad7989c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 0.195292 seconds.
+  path: Assets/AltonGames/nature/Textures/Atlas_Leaves_Autumn_Diffuse.png
+  artifactKey: Guid(a9a1a39ea91a68c4ebfbf6f30438889b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/InPlace/JumpFull_Spin_InPlace_SwordAndShield.fbx using Guid(b5bfe52205c4a874991178073ad7989c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f5ec53afee2f303660daf06b86031e7') in 0.084753 seconds 
-Number of asset objects unloaded after import = 111
+Start importing Assets/AltonGames/nature/Textures/Atlas_Leaves_Autumn_Diffuse.png using Guid(a9a1a39ea91a68c4ebfbf6f30438889b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0638aec0ae41fe1bbf164f788129eb9f') in 0.234958 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/RootMotion/MoveBWD_Battle_RM_SwordAndShield.fbx
-  artifactKey: Guid(320724e8ef4b93d458cfaace85217d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 0.000042 seconds.
+  path: Assets/AltonGames/nature/Textures/Leaf_Aesculus-hippocastanum_Diffuse.png
+  artifactKey: Guid(a0db31b62c8c20446ab968db3e19abe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/RootMotion/MoveBWD_Battle_RM_SwordAndShield.fbx using Guid(320724e8ef4b93d458cfaace85217d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b22f4338c7d99b821b29ce65e8aeb72b') in 0.085975 seconds 
-Number of asset objects unloaded after import = 111
+Start importing Assets/AltonGames/nature/Textures/Leaf_Aesculus-hippocastanum_Diffuse.png using Guid(a0db31b62c8c20446ab968db3e19abe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28cd1d8df81eebb4865ba99cce5d1452') in 0.080306 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/AltonGames/nature/Textures/Bark_Tilia-europaea_Diffuse.png
+  artifactKey: Guid(674eaf425b980674facd303f7364ecfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AltonGames/nature/Textures/Bark_Tilia-europaea_Diffuse.png using Guid(674eaf425b980674facd303f7364ecfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a26ffd4ac4a8b734579d46bb8c04d91') in 0.126343 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000029 seconds.
-  path: Assets/RPG Tiny Hero Duo/Mesh/ModularCharacterPBR.fbx
-  artifactKey: Guid(34b0895dfc863f742aa5075a4e691859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  path: Assets/AltonGames/nature/Textures/Bark_Malus-domestica_Diffuse.png
+  artifactKey: Guid(9a8be12383594ad4eb34dfa56e2ab40a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Mesh/ModularCharacterPBR.fbx using Guid(34b0895dfc863f742aa5075a4e691859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93659f29183cb4f8f78a1f81bd61fa64') in 0.110613 seconds 
-Number of asset objects unloaded after import = 146
+Start importing Assets/AltonGames/nature/Textures/Bark_Malus-domestica_Diffuse.png using Guid(9a8be12383594ad4eb34dfa56e2ab40a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24869406c8ef8721971fcb4374997ceb') in 0.049822 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/AltonGames/nature/Textures/Leaf_Robinia-pseudoacacia_Normal.png
+  artifactKey: Guid(1e3076b3511e5dd43b980786ce24d5c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AltonGames/nature/Textures/Leaf_Robinia-pseudoacacia_Normal.png using Guid(1e3076b3511e5dd43b980786ce24d5c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df21dd5d9cdb9bde71fd630f7d9d99fe') in 0.044895 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/AltonGames/nature/Textures/Bark_Acer-pseudoplatanus_Diffuse.png
+  artifactKey: Guid(9bf05340d40705c4e855c985e01b0983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AltonGames/nature/Textures/Bark_Acer-pseudoplatanus_Diffuse.png using Guid(9bf05340d40705c4e855c985e01b0983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28a833f4c5a6d72e115819db938cd103') in 0.035269 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000039 seconds.
-  path: Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/GetUp_SwordAndShield.fbx
-  artifactKey: Guid(4e1dc6b0156559b4ca64937d40514fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  path: Assets/AltonGames/nature/Textures/Bark_Malus-domestica_Normal.png
+  artifactKey: Guid(05d8a824d78fb614d84dee84fd5682e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/GetUp_SwordAndShield.fbx using Guid(4e1dc6b0156559b4ca64937d40514fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69cd1c9ebe3f10746fb7b7383da1d3fe') in 0.063322 seconds 
-Number of asset objects unloaded after import = 111
+Start importing Assets/AltonGames/nature/Textures/Bark_Malus-domestica_Normal.png using Guid(05d8a824d78fb614d84dee84fd5682e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd93eb21e6f08c9eb285215c5000c3f1') in 0.080016 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/RootMotion/SprintFWD_Battle_RM_SwordAndShield.fbx
-  artifactKey: Guid(b40499a5812feac4aa7b77f7fbbac11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 0.000051 seconds.
+  path: Assets/AltonGames/nature/Textures/Bark_Robinia-pseudoacacia_Diffuse.png
+  artifactKey: Guid(e37aa030a28956542bd35e47b3cb33dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/RootMotion/SprintFWD_Battle_RM_SwordAndShield.fbx using Guid(b40499a5812feac4aa7b77f7fbbac11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2da10739fd52bbc647dc1ba892a8f67d') in 0.066994 seconds 
-Number of asset objects unloaded after import = 111
+Start importing Assets/AltonGames/nature/Textures/Bark_Robinia-pseudoacacia_Diffuse.png using Guid(e37aa030a28956542bd35e47b3cb33dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b92989c21d5b496d31c54f90aff2e78') in 0.157131 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/Attack04_SwordAndShiled.fbx
-  artifactKey: Guid(b267a2c210dbd1d4badc3f270df6d12d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 13.001195 seconds.
+  path: Assets/AltonGames/nature/Meshes
+  artifactKey: Guid(3eb4be60434b1814bb265a48108ea9c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/Attack04_SwordAndShiled.fbx using Guid(b267a2c210dbd1d4badc3f270df6d12d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a44b24cf7b1858b5d7e0917433b2e65') in 0.044287 seconds 
-Number of asset objects unloaded after import = 111
+Start importing Assets/AltonGames/nature/Meshes using Guid(3eb4be60434b1814bb265a48108ea9c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4cacb7d5f4baf68011ccf3287405df1') in 0.012700 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.083847 seconds.
+  path: Assets/AltonGames/nature/Meshes/apple.fbx
+  artifactKey: Guid(4c97d58a241e1f04e931f63a6de4611c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AltonGames/nature/Meshes/apple.fbx using Guid(4c97d58a241e1f04e931f63a6de4611c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13d2b57eaf893156f37d3c48029da73d') in 0.268563 seconds 
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/AltonGames/nature/Meshes/lucious tree.fbx
+  artifactKey: Guid(9d6bb61d136628e47ad55374edc6c922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AltonGames/nature/Meshes/lucious tree.fbx using Guid(9d6bb61d136628e47ad55374edc6c922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b87a79c7a2f63de0ee127be0f19fd9d1') in 0.133551 seconds 
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 4.202061 seconds.
+  path: Assets/AltonGames/nature/materials
+  artifactKey: Guid(4322b697a13674149af9f1e5ce7315ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AltonGames/nature/materials using Guid(4322b697a13674149af9f1e5ce7315ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c589fefc66219bdc34546dfcbb747bdb') in 0.010593 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.246858 seconds.
+  path: Assets/AltonGames/nature/materials/appletree 1.mat
+  artifactKey: Guid(317e6bd2fbffafc41b37ed5b7b4b62a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AltonGames/nature/materials/appletree 1.mat using Guid(317e6bd2fbffafc41b37ed5b7b4b62a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '905978c9fdf1bb3c3abbdb25a1b0a703') in 0.058060 seconds 
+Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000031 seconds.
-  path: Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/RootMotion/MoveRGT_Battle_RM_SwordAndShield.fbx
-  artifactKey: Guid(95f446e17c268294c9891358350fcc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  path: Assets/AltonGames/nature/materials/mushroom.mat
+  artifactKey: Guid(be7c0af6da4e96240a298dc935c8df4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/RootMotion/MoveRGT_Battle_RM_SwordAndShield.fbx using Guid(95f446e17c268294c9891358350fcc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f400f1fce81f2c26dbc6e9057766063a') in 0.052028 seconds 
-Number of asset objects unloaded after import = 111
+Start importing Assets/AltonGames/nature/materials/mushroom.mat using Guid(be7c0af6da4e96240a298dc935c8df4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5059152fd906e22caab58af5305e3ee') in 0.048520 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/InPlace/MoveFWD_Normal_InPlace_SwordAndShield.fbx
-  artifactKey: Guid(0791e523b7f1b2740a3b1cde42b6aeac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 0.000032 seconds.
+  path: Assets/AltonGames/nature/materials/New Material.mat
+  artifactKey: Guid(0ed04ddd9e9521a4ba65785c06cb3ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/RPG Tiny Hero Duo/Animation/SwordAndShield/InPlace/MoveFWD_Normal_InPlace_SwordAndShield.fbx using Guid(0791e523b7f1b2740a3b1cde42b6aeac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c678f6e379bbbeaffa9c18181a6608f7') in 0.041673 seconds 
-Number of asset objects unloaded after import = 111
+Start importing Assets/AltonGames/nature/materials/New Material.mat using Guid(0ed04ddd9e9521a4ba65785c06cb3ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cad902e55a14e8ced3bea405013d282') in 0.073578 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/AltonGames/nature/materials/maple 1.mat
+  artifactKey: Guid(9cc3cf77334af1945afb2a8572ddabe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AltonGames/nature/materials/maple 1.mat using Guid(9cc3cf77334af1945afb2a8572ddabe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b3e6b25834c412bfbe2e08e4e6318b8') in 0.110595 seconds 
+Number of asset objects unloaded after import = 3
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
 AssetImportWorker is now disconnected from the server
 Process exiting
 Exiting without the bug reporter. Application will terminate with return code 0
