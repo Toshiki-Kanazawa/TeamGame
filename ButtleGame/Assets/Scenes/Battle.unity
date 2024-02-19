@@ -1812,7 +1812,7 @@ GameObject:
   - component: {fileID: 1107175373}
   - component: {fileID: 1107175372}
   - component: {fileID: 1107175371}
-  - component: {fileID: 1107175370}
+  - component: {fileID: 1107175374}
   m_Layer: 0
   m_Name: Main Camera_Boy
   m_TagString: MainCamera
@@ -1820,31 +1820,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1107175370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107175369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08aacb21cb68961469623df66401f0c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 3419901109779914548}
-  prevTargetPos: {x: 0, y: 0, z: 0}
-  camMode: 0
-  offset_LockDown: {x: 0, y: 7.5, z: -1.5}
-  offset_BackView: {x: 0, y: 1, z: -10}
-  seekSpeed: 2
-  cameraSensity: 100
-  input_Rstick: 0
-  inputHorizontal: 0
-  inputVertical: 0
-  maxAngle: 70
-  minAngle: -10
-  newAngle: {x: 0, y: 0, z: 0}
 --- !u!81 &1107175371
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1903,14 +1878,39 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107175369}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 2.01, z: 8.6}
+  m_LocalRotation: {x: 0.0015821978, y: -0, z: -0, w: 0.9999988}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.181, y: 0, z: 0}
+--- !u!114 &1107175374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107175369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78bd2b77dc1c1b498814f6a76000f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 3419901109779914548}
+  prevTargetPos: {x: 0, y: 0, z: 0}
+  camMode: 0
+  offset_LockDown: {x: 0, y: 180, z: -1.5}
+  offset_BackView: {x: 0, y: 180, z: -10}
+  seekSpeed: 2
+  cameraSensity: 100
+  input_Rstick: 0
+  inputHorizontal: 0
+  inputVertical: 0
+  maxAngle: 70
+  minAngle: -10
+  newAngle: {x: 0, y: 0, z: 0}
 --- !u!1 &1200551827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d8c195ca0ca98284c812c4f82d1072f6, type: 3}
@@ -2284,7 +2284,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567298214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08aacb21cb68961469623df66401f0c5, type: 3}
+  m_Script: {fileID: 11500000, guid: e78bd2b77dc1c1b498814f6a76000f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 7969572176805512887}
@@ -4026,7 +4026,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1107175374}
         m_TargetAssemblyTypeName: SeekCamera, Assembly-CSharp
         m_MethodName: GamePad_RightStick_CameraControl
         m_Mode: 0
@@ -4113,7 +4113,7 @@ MonoBehaviour:
     m_ActionId: e963ef2e-eb8e-4a5d-9b4e-5d9d628a5849
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -4610,9 +4610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Head
-  customColor: 0
-  tag: 0
 --- !u!33 &4778917087233578767
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4810,9 +4807,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Sword
-  customColor: 0
-  tag: 2
 --- !u!4 &5921993383092758888
 Transform:
   m_ObjectHideFlags: 0
@@ -4920,9 +4914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Shield
-  customColor: 0
-  tag: 2
 --- !u!1 &6191157927122077435
 GameObject:
   m_ObjectHideFlags: 0
@@ -5312,9 +5303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Cloak
-  customColor: 1
-  tag: 1
 --- !u!1 &7392369016888199907
 GameObject:
   m_ObjectHideFlags: 0
@@ -5492,9 +5480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Cloak
-  customColor: 1
-  tag: 1
 --- !u!4 &7969572176549692634
 Transform:
   m_ObjectHideFlags: 0
@@ -6093,7 +6078,7 @@ MonoBehaviour:
     m_ActionId: e963ef2e-eb8e-4a5d-9b4e-5d9d628a5849
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -6504,7 +6489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c330ea1881ece3f4ba49fe48c0cba48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos_name: Player_Sword
 --- !u!33 &7969572177360614406
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6750,9 +6734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Head
-  customColor: 0
-  tag: 1
 --- !u!4 &7969572177457272435
 Transform:
   m_ObjectHideFlags: 0
@@ -7095,9 +7076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Shield
-  customColor: 0
-  tag: 2
 --- !u!4 &7969572177757394347
 Transform:
   m_ObjectHideFlags: 0
@@ -7175,9 +7153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Sword
-  customColor: 0
-  tag: 2
 --- !u!4 &7969572177800947282
 Transform:
   m_ObjectHideFlags: 0
@@ -7530,9 +7505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Body
-  customColor: 1
-  tag: 1
 --- !u!4 &7969572178089349047
 Transform:
   m_ObjectHideFlags: 0
@@ -8182,9 +8154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts_name: Body
-  customColor: 1
-  tag: 1
 --- !u!23 &8322050101930604654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8464,7 +8433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c330ea1881ece3f4ba49fe48c0cba48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos_name: Player_Sword
 --- !u!33 &9002772294250712483
 MeshFilter:
   m_ObjectHideFlags: 0
