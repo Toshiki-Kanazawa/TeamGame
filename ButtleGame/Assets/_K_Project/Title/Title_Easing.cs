@@ -7,7 +7,7 @@ public class Title_Easing : MonoBehaviour
     // 初期位置
     [SerializeField] private float initX = 0.0f;
     private float initY = Screen.height * 0.5f;
-    public float easingTime = 0;
+    private  float easingTime = 0;
     private float easingTotalTime = 1.0f;
 
     [SerializeField] private float moveSpeed = 50.0f; 
@@ -24,9 +24,6 @@ public class Title_Easing : MonoBehaviour
 
     void Update()
     {
-
-
-
         // 中心に来るまで移動
         if (transform.position.x < Screen.width * 0.5f)
         {
@@ -46,10 +43,11 @@ public class Title_Easing : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// イージング関数 (アウトバウンス)
+    /// </summary>
     public static float OutBounce(float time, float totaltime, float max = 1f, float min = 0f)
     {
-
-
         float _2_75 = 2.75f;
         float _7_5625 = 7.5625f;
         float _0_75 = 0.75f;
