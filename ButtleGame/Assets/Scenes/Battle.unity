@@ -4607,9 +4607,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1264556693550244226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: b6c5f7c47ac582c44a24604f733f55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parts_name: Head
+  customColor: 0
+  tag: 1
 --- !u!33 &4778917087233578767
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4804,9 +4807,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5917824985980700380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: b6c5f7c47ac582c44a24604f733f55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parts_name: Sword
+  customColor: 0
+  tag: 2
 --- !u!4 &5921993383092758888
 Transform:
   m_ObjectHideFlags: 0
@@ -5300,9 +5306,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2546250929333275406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: b6c5f7c47ac582c44a24604f733f55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parts_name: Cloak
+  customColor: 1
+  tag: 1
 --- !u!1 &7392369016888199907
 GameObject:
   m_ObjectHideFlags: 0
@@ -5477,9 +5486,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7969572176549692636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: b6c5f7c47ac582c44a24604f733f55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parts_name: Cloak
+  customColor: 1
+  tag: 1
 --- !u!4 &7969572176549692634
 Transform:
   m_ObjectHideFlags: 0
@@ -6486,9 +6498,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7969572177360614425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c330ea1881ece3f4ba49fe48c0cba48b, type: 3}
+  m_Script: {fileID: 11500000, guid: a019ec344e5319148882b9596ece0e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pos_name: SwordPos
 --- !u!33 &7969572177360614406
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6731,9 +6744,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7969572177457272436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: b6c5f7c47ac582c44a24604f733f55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parts_name: Head
+  customColor: 0
+  tag: 0
 --- !u!4 &7969572177457272435
 Transform:
   m_ObjectHideFlags: 0
@@ -7073,9 +7089,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7969572177757394348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: b6c5f7c47ac582c44a24604f733f55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parts_name: Shield
+  customColor: 0
+  tag: 2
 --- !u!4 &7969572177757394347
 Transform:
   m_ObjectHideFlags: 0
@@ -7150,9 +7169,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7969572177800947283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: b6c5f7c47ac582c44a24604f733f55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parts_name: Sword
+  customColor: 0
+  tag: 2
 --- !u!4 &7969572177800947282
 Transform:
   m_ObjectHideFlags: 0
@@ -7486,6 +7508,8 @@ GameObject:
   - component: {fileID: 7969572178089349047}
   - component: {fileID: 7969572178089349000}
   - component: {fileID: 7969572178089349046}
+  - component: {fileID: 7969572178089349049}
+  - component: {fileID: 7969572178089349048}
   m_Layer: 0
   m_Name: Body10
   m_TagString: Untagged
@@ -7502,9 +7526,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7969572178089349001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: b6c5f7c47ac582c44a24604f733f55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parts_name: Body
+  customColor: 1
+  tag: 1
 --- !u!4 &7969572178089349047
 Transform:
   m_ObjectHideFlags: 0
@@ -7520,6 +7547,31 @@ Transform:
   m_Father: {fileID: 7969572176805512895}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7969572178089349048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969572178089349001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba81ec99c2d3a3d4a8432852b55f5619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7969572178089349049
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969572178089349001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47839618, y: 0.49978665, z: 1.1086982}
+  m_Center: {x: -0.0032908916, y: -0.0029590577, z: 0.5342193}
 --- !u!4 &7969572178090244214
 Transform:
   m_ObjectHideFlags: 0
@@ -8135,6 +8187,8 @@ GameObject:
   - component: {fileID: 3285233004371250633}
   - component: {fileID: 6772695485019197161}
   - component: {fileID: 8189271407236898700}
+  - component: {fileID: 8189271407236898702}
+  - component: {fileID: 8189271407236898701}
   m_Layer: 0
   m_Name: Body05
   m_TagString: Untagged
@@ -8151,9 +8205,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 8189271407236898699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e969bd68edcb7943b8e0ecf6537f3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: b6c5f7c47ac582c44a24604f733f55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parts_name: Body
+  customColor: 1
+  tag: 1
+--- !u!114 &8189271407236898701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189271407236898699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba81ec99c2d3a3d4a8432852b55f5619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &8189271407236898702
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189271407236898699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.54848087, y: 0.43527892, z: 1.1827261}
+  m_Center: {x: 0.0036343345, y: -0.47077248, z: 0.10928911}
 --- !u!23 &8322050101930604654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8430,9 +8512,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9002772294250712511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c330ea1881ece3f4ba49fe48c0cba48b, type: 3}
+  m_Script: {fileID: 11500000, guid: a019ec344e5319148882b9596ece0e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pos_name: Sword
 --- !u!33 &9002772294250712483
 MeshFilter:
   m_ObjectHideFlags: 0
