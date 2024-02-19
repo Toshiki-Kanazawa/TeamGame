@@ -18,8 +18,10 @@ public class M_PlayerAttack : MonoBehaviour
         ChargeAttack,
     }
 
+    // 自身のコンポーネント
+    private M_CharactorStatus status;
+
     [Header("制御変数")]
-    public bool isAttack = false;
     public bool isExtendAttack = false;
     public eAttackBranch currentAttackBranch = eAttackBranch.None;
     public eAttackBranch prevAttackBranch = eAttackBranch.None;
@@ -29,13 +31,12 @@ public class M_PlayerAttack : MonoBehaviour
     void Start()
     {
         // マネージャーの取得
-        pl_MGR = this.gameObject.GetComponent<M_PlayerManager>();
+        pl_MGR = GetComponent<M_PlayerManager>();
 
-        isAttack = false;
+        status = GetComponent<M_CharactorStatus>();
+
         currentAttackBranch = eAttackBranch.None;
         prevAttackBranch = eAttackBranch.None;
-
-
     }
 
     void Update()
@@ -48,25 +49,26 @@ public class M_PlayerAttack : MonoBehaviour
         if (isExtendAttack == true) return;
 
         // 攻撃アニメーションの再生
-        isAttack = true;
+        status.SetIsAttack(true);
 
-        // 攻撃の分岐
-        if (currentAttackBranch == eAttackBranch.None)
-        {
-            currentAttackBranch = eAttackBranch.N_Attack_1;
-        }
-        // 攻撃１モーション中に入力された場合
-        else if (currentAttackBranch == eAttackBranch.N_Attack_1)
-        {
-            //isExtendAttack = true;
-            currentAttackBranch = eAttackBranch.N_Attack_2;
-        }
-        // 攻撃２モーション中に入力された場合
-        else if (currentAttackBranch == eAttackBranch.N_Attack_2)
-        {
-            isExtendAttack = true;
-            currentAttackBranch = eAttackBranch.N_Attack_3;
-        }
+        /* 調整中：３段攻撃 */
+        //// 攻撃の分岐
+        //if (currentAttackBranch == eAttackBranch.None)
+        //{
+        //    currentAttackBranch = eAttackBranch.N_Attack_1;
+        //}
+        //// 攻撃１モーション中に入力された場合
+        //else if (currentAttackBranch == eAttackBranch.N_Attack_1)
+        //{
+        //    //isExtendAttack = true;
+        //    currentAttackBranch = eAttackBranch.N_Attack_2;
+        //}
+        //// 攻撃２モーション中に入力された場合
+        //else if (currentAttackBranch == eAttackBranch.N_Attack_2)
+        //{
+        //    isExtendAttack = true;
+        //    currentAttackBranch = eAttackBranch.N_Attack_3;
+        //}
 
         Debug.Log("攻撃しました");
 
@@ -86,10 +88,10 @@ public class M_PlayerAttack : MonoBehaviour
     public void ResetAttack()
     {
         // 派生攻撃中はリセットしない
-        if (isExtendAttack) return;
+        if (isExtendAttack == true) return;
 
         // 攻撃状態をリセットする
-        isAttack = false;
+        status.SetIsAttack(false);
         currentAttackBranch = eAttackBranch.None;
 
         Debug.Log("Execute：ResetAttack");
@@ -100,7 +102,7 @@ public class M_PlayerAttack : MonoBehaviour
         isExtendAttack = false;
 
         // 攻撃状態をリセットする
-        isAttack = false;
+        status.SetIsAttack(false);
         currentAttackBranch = eAttackBranch.None;
 
         Debug.Log("Execute：ResetExtendAttack");
