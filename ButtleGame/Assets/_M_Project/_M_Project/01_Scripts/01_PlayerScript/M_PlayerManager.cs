@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class M_PlayerManager : MonoBehaviour
 {
+    [Header("所有するカメラ：自動設定")]
+    [SerializeField]
+    public GameObject cam;
+    [Header("カメラプレファブ")]
+    public GameObject cam_prefab;
+
     [Header("動作クラス")]
     [SerializeField]
     private M_PlayerMove pl_Move;
@@ -11,6 +17,10 @@ public class M_PlayerManager : MonoBehaviour
     private M_PlayerAttack pl_Attack;
     [SerializeField]
     private PlayerAnimationComparator pl_AnimCompo;
+    [SerializeField]
+    private M_CharactorStatus pl_Status;
+    //[SerializeField]
+    //private M_HSV_Controler hsv;
 
     [Header("構成パーツ")]
     [SerializeField]
@@ -21,10 +31,19 @@ public class M_PlayerManager : MonoBehaviour
 
     void Start()
     {
+        // カメラを生成する
+        //cam = Instantiate(cam_prefab);
+        //cam.GetComponent<SeekCamera>().SetParent(this.gameObject);
+
         // 動作クラスのコンポーネント取得
-        pl_Move = this.gameObject.GetComponent<M_PlayerMove>();
-        pl_Attack = this.gameObject.GetComponent<M_PlayerAttack>();
-        pl_AnimCompo = this.gameObject.GetComponent<PlayerAnimationComparator>();
+        pl_Move = GetComponent<M_PlayerMove>();
+        pl_Attack = GetComponent<M_PlayerAttack>();
+        pl_AnimCompo = GetComponent<PlayerAnimationComparator>();
+        pl_Status = GetComponent<M_CharactorStatus>();
+        //hsv = GetComponent<M_HSV_Controler>();
+
+        // カメラを設定
+        //pl_Move.SetPlayerCamera(cam.GetComponent<Camera>());
 
         // 構成パーツのゲームオブジェクトの取得
         // ExTag のコンポーネントを持つ子オブジェクトを検索する
@@ -42,11 +61,17 @@ public class M_PlayerManager : MonoBehaviour
 
             // 座標情報をコピー
             pl_Parts_Pos[i] = pl_Parts[i].transform;
+
         }
     }
 
     void Update()
     {
 
+    }
+
+    public GameObject[] GetParts()
+    {
+        return pl_Parts;
     }
 }

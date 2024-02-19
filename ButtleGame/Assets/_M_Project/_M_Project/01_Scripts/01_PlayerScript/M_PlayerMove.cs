@@ -23,8 +23,10 @@ public class M_PlayerMove : MonoBehaviour
 
     // 自身のコンポーネント
     private Rigidbody rb;
+    private M_CharactorStatus status;
 
     [Header("基準にするカメラ")]
+    private GameObject cam_obj;
     public Camera mainCamera;
     public Vector3 n_CameraForward = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -39,14 +41,6 @@ public class M_PlayerMove : MonoBehaviour
     public float addVelocity = 9.0f;
     public float jump_y = 0.0f;
 
-    [Header("アニメーション制御変数")]
-    public bool isMoving = false;
-    public bool isGround = true;
-    public bool isJumping = false;
-    public bool isSecondJump = false;
-    public bool isLockon = false;
-    public eMoveDirection eMoveDir;
-
     /* ---↓ Executes ↓------------------------------------------------------------------------------------- */
 
     void Start()
@@ -54,20 +48,11 @@ public class M_PlayerMove : MonoBehaviour
         // マネージャーの取得
         pl_MGR = this.gameObject.GetComponent<M_PlayerManager>();
 
-        // メインカメラを取得
-        //mainCamera = Camera.main;
+        /* プレイヤーカメラの取得はマネージャーで処理 */
 
         // リジッドボディを代入
-        rb = this.GetComponent<Rigidbody>();
-
-        // 初期化
-        isMoving = false;
-        isGround = true;
-        isJumping = false;
-        isSecondJump = false;
-        //isAttack = false;
-        isLockon = false;
-        eMoveDir = eMoveDirection.None;
+        rb = GetComponent<Rigidbody>();
+        status = GetComponent<M_CharactorStatus>();
     }
 
     void Update()
@@ -85,9 +70,9 @@ public class M_PlayerMove : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // 行動権を回復する
-        isGround = true;
-        isJumping = false;
-        isSecondJump = false;
+        status.SetIsGround(true);
+        status.SetIsJumping(false);
+        status.SetIsSecondJump(false);
 
         Debug.Log("何かに衝突しました：行動権を回復しました");
     }
@@ -104,7 +89,7 @@ public class M_PlayerMove : MonoBehaviour
     private void PlayerMove_Source_CameraDirection()
     {
         // アニメーション反映用
-        isMoving = false;
+        status.SetIsMoving(false);
 
         // カメラの方向から X-Z平面の単位ベクトルを取得
         n_CameraForward = Vector3.Scale(mainCamera.transform.forward, new Vector3(1.0f, 0.0f, 1.0f)).normalized;
@@ -120,7 +105,7 @@ public class M_PlayerMove : MonoBehaviour
         if (moveForward != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(moveForward);
-            isMoving = true;
+            status.SetIsMoving(true);
         }
 
         Debug.Log("プレイヤーがカメラ方向を基準に動いています");
@@ -128,7 +113,7 @@ public class M_PlayerMove : MonoBehaviour
 
     private void Action_Jump()
     {
-        if (isSecondJump == true) return;
+        if (status.GetIsSecondJump() == true) return;
 
         // 上方向へのベクトル
         Vector3 jump_vec = Vector3.up;
@@ -140,13 +125,13 @@ public class M_PlayerMove : MonoBehaviour
         rb.velocity = new Vector3(0.0f, jump_y, 0.0f);
 
         // フラグ処理
-        if (isJumping == true)
+        if (status.GetIsJumping() == true)
         {
-            isSecondJump = true;
+            status.SetIsSecondJump(true);
             Debug.Log("２段ジャンプしました");
         }
-        isJumping = true;
-        isGround = false;
+        status.SetIsJumping(true);
+        status.SetIsGround(true);
 
         Debug.Log("ジャンプしました");
     }
@@ -162,10 +147,15 @@ public class M_PlayerMove : MonoBehaviour
 
     private void AddGravity()
     {
-        if (isGround == false)
+        if (status.GetIsGround() == false)
         {
             rb.AddForce(new Vector3(0.0f, -gravityPower, 0.0f));
             Debug.Log("重力降下しています");
         }
+    }
+
+    public void SetPlayerCamera(Camera cam)
+    {
+        mainCamera = cam;
     }
 }
