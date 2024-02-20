@@ -4,44 +4,84 @@ using UnityEngine;
 
 public class Title_Easing : MonoBehaviour
 {
-    // 初期位置
-    [SerializeField] private float initX = 0.0f;
-    private float initY = Screen.height * 0.5f;
-    private  float easingTime = 0;
-    private float easingTotalTime = 1.0f;
+    // インスペクタで変更できる値
+    [SerializeField] private float initX = 0.0f;      // 初期位置x
+    [SerializeField] private float moveSpeed = 50.0f; // 移動速度
+    [SerializeField] private float initScale = 0.2f;  // 初期スケール
 
-    [SerializeField] private float moveSpeed = 50.0f; 
-    [SerializeField] private float initScale = 0.2f; 
+    // プライベート変数
+    private bool directing_f; // true→演出中
+
+    // イージング関連
+    private float easingTime = 0;         // イージング経過時間
+    private float easingTotalTime = 1.0f; // イージング終了時間
+    private bool easing_f = false;     // true→イージング中
+    private bool easingFinish = false; // true→イージング終了
 
     void Start()
     {
-        // 初期位置を設定
-        transform.position = new Vector3(initX,initY,0);
-        transform.localScale = new Vector3(initScale,initScale,0);
-
-        InvokeRepeating("OutBounce",0,1.0f);
+        initialize();
     }
 
     void Update()
     {
+        if (!directing_f) return;
+
         // 中心に来るまで移動
         if (transform.position.x < Screen.width * 0.5f)
         {
-            transform.position += new Vector3(moveSpeed * Time.deltaTime, 0.0f,0.0f);
+            transform.Translate(moveSpeed * Time.deltaTime, 0.0f, 0.0f);
         }
         else
         {
-            easingTime += 1 * Time.deltaTime;
-
-            if(easingTime > easingTotalTime)
-            {
-                easingTime = easingTotalTime;
-            }
-            // 中心に来たらイージング拡大する
-            float easingScale = OutBounce(easingTime, easingTotalTime, 1.0f, 0.1f);
-            transform.localScale = new Vector3(easingScale,easingScale,0);
+            // イージング関数で拡大
+            Easing();
         }
     }
+
+    /// <summary>
+    /// 初期化
+    /// </summary>
+    private void initialize()
+    {
+        // 初期位置を設定
+        var pos = transform.position;
+        pos.x = initX;
+        transform.position = pos;
+
+        // 演出フラグをtrue
+        directing_f = true;
+
+        // 初期スケールを設定
+        transform.localScale = new Vector3(initScale, initScale, 0);
+    }
+
+    /// <summary>
+    /// イージング関数呼び出し
+    /// </summary>
+    void Easing()
+    {
+        // イージング終了してたらreturn
+        if (easingFinish) return;
+
+        easing_f = true;
+
+        // カウントを動かす
+        easingTime += 1 * Time.deltaTime;
+
+        // カウントを超えたら終了
+        if (easingTime > easingTotalTime)
+        {
+            easingFinish = true;
+            easing_f = false;
+            directing_f = false;
+            easingTime = easingTotalTime;
+        }
+        // イージング拡大
+        float easingScale = OutBounce(easingTime, easingTotalTime, 1.0f, 0.1f);
+        transform.localScale = new Vector3(easingScale, easingScale, 0);
+    }
+
 
     /// <summary>
     /// イージング関数 (アウトバウンス)

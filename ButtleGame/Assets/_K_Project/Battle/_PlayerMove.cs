@@ -46,7 +46,6 @@ public class _PlayerMove : MonoBehaviour
     {
         float vertical = inputs.Player.Move.ReadValue<Vector2>().y;
         float horizontal = inputs.Player.Move.ReadValue<Vector2>().x;
-
         //‰ñ“]
         if (horizontal > 0)
             transform.Rotate(0, rotSpeed * Time.deltaTime, 0);
