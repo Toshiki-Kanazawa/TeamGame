@@ -22,9 +22,13 @@ public class M_CharactorStatus : MonoBehaviour
 
     [Header("キャラクターのパラメータ")]
     [SerializeField]
-    private int hitPoint = 100;     // 体力
+    private const int hitPoint_Max = 100;   // 最大体力
     [SerializeField]
-    private float stamina = 100.0f; // 行動力
+    private int hitPoint = hitPoint_Max;     // 体力
+    [SerializeField]
+    private const float stamina_Max = 100.0f;   // 最大行動力
+    [SerializeField]
+    private float stamina = stamina_Max; // 行動力
     [SerializeField]
     private int atk = 10;           // 攻撃力
     [SerializeField]
@@ -57,6 +61,9 @@ public class M_CharactorStatus : MonoBehaviour
 
     void Start()
     {
+        hitPoint = hitPoint_Max;
+        stamina = stamina_Max;
+
         pl_MGR = GetComponent<M_PlayerManager>();
         // このスクリプトの全ての値を初期化
         ResetIsAllValues();
@@ -77,6 +84,21 @@ public class M_CharactorStatus : MonoBehaviour
     public int GetHitPoint()
     {
         return hitPoint;
+    }
+
+    public int GetHitPointMax()
+    {
+        return hitPoint_Max;
+    }
+
+    public float GetStamina()
+    {
+        return stamina;
+    }
+
+    public float GetStaminaMax()
+    {
+        return stamina_Max;
     }
 
 /* Setter */
