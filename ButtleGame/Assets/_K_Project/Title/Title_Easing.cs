@@ -10,7 +10,9 @@ public class Title_Easing : MonoBehaviour
     [SerializeField] private float initScale = 0.2f;  // 初期スケール
 
     // プライベート変数
-    private bool directing_f; // true→演出中
+    
+    // クラス外ではgetのみ有効
+    public bool directing_f { get; private set; }// true→演出中
 
     // イージング関連
     private float easingTime = 0;         // イージング経過時間

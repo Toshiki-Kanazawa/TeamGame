@@ -10,11 +10,13 @@ public class WinnerTextPrint : MonoBehaviour
     // JudgeƒNƒ‰ƒX‚©‚çŸÒ‚ğæ“¾‚µ‚ÄText‚Å”½‰f‚·‚é
     void Start()
     {
-        if(Judge.GetWinnerPlayer() == Judge.enPlayer.Boy)
+        var winner = Judge.WinnerPlayer;
+
+        if(winner == Judge.enPlayer.Boy)
         {
             text.text = "’j‚ÌŸ‚¿";
         }
-        else if (Judge.GetWinnerPlayer() == Judge.enPlayer.Girl)
+        else if (winner == Judge.enPlayer.Girl)
         {
             text.text = "—‚ÌŸ‚¿";
         }

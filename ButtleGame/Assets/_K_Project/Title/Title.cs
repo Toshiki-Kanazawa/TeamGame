@@ -8,28 +8,33 @@ public class Title : MonoBehaviour
 {
     [SerializeField] private string nextScene;
 
-    private Inputs inputs;
+    [SerializeField] private Cursor cCursor; // Cursor クラスのインスタンス
 
     void Start()
     {
-        // ① Actionスクリプトのインスタンス生成
-        inputs = new Inputs();
-
-        // ② Input Actionを機能させるために有効化させる
-        inputs.Enable();
+        cCursor.GetComponent<Cursor>();
     }
 
-    void OnDestroy()
+    /// <summary>
+    /// InputSystem用の関数
+    /// </summary>
+    /// <param name="context"></param>
+    public void OnDecision(InputAction.CallbackContext context)
     {
-        // ③ リソースの解放
-        inputs?.Dispose();
-    }
+        // Cursor クラスから値を受け取り、処理を変更する
+        int cur = cCursor.cursor;
 
-    void Update()
-    {
-        if (inputs.Player.Jump.triggered)
+        switch (cur)
         {
-            SceneManager.LoadScene(nextScene);
+            case 0:
+                SceneManager.LoadScene(nextScene);
+                break;
+            case 1:
+                Debug.Log("OptionScene");
+                break;
+            default:
+                Debug.Log("Title.csの例外参照");
+                break;
         }
     }
 }

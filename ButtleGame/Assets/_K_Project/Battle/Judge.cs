@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 /// <summary>
 /// だれが勝利したかを教える
+/// マネージャーに持たせる予定
 /// </summary>
 public class Judge : MonoBehaviour
 {
+    // インスペクタで設定できる変数
+    [SerializeField] string nextScene = "Result";
+
+    [Header("プレイヤーの種類")]
+    [SerializeField] private List<M_CharactorStatus> status = new List<M_CharactorStatus>();
+
     // プレイヤーの種類
     public enum enPlayer
     {
@@ -16,9 +23,30 @@ public class Judge : MonoBehaviour
         Pl_Max, // 例外
     }
 
-    static byte winner = 255;
+    // 勝者の取得、設定
+    static public enPlayer WinnerPlayer
+    {
+        get
+        {
+            switch (winner)
+            {
+                case (byte)enPlayer.Boy:
+                    return enPlayer.Boy;
 
-    [SerializeField] private M_CharactorStatus[] status;
+                case (byte)enPlayer.Girl:
+                    return enPlayer.Girl;
+
+                default:
+                    return enPlayer.Pl_Max;
+            }
+        }
+        set
+        {
+            winner = (byte)value;
+        }
+    }
+
+    static byte winner = 255;
 
     void Update()
     {
@@ -27,45 +55,22 @@ public class Judge : MonoBehaviour
 
     void JudgePlayer()
     {
-        for(int i = 0; i < (int)enPlayer.Pl_Max; i++)
+        foreach (var playerStatus in status)
         {
-            if(status[i].GetHitPoint() <= 0)
+            if (playerStatus.GetHitPoint() <= 0)
             {
-                if (status[i].gameObject.CompareTag("Player_Boy"))
+                if (playerStatus.gameObject.CompareTag("Player_Boy"))
                 {
-                    setWinnerPlayer(enPlayer.Girl);
-                    SceneManager.LoadScene("Result");
-                    
+                    WinnerPlayer = enPlayer.Girl;
                 }
-                else if (status[i].gameObject.CompareTag("Player_Girl"))
+                else if (playerStatus.gameObject.CompareTag("Player_Girl"))
                 {
-                    setWinnerPlayer(enPlayer.Boy);
-                    SceneManager.LoadScene("Result");
+                    WinnerPlayer = enPlayer.Boy;
                 }
+                SceneManager.LoadScene(nextScene);
             }
         }
     }
 
-    public void setWinnerPlayer(enPlayer player)
-    {
-        winner = (byte)player;
-    }
 
-    static public enPlayer GetWinnerPlayer()
-    {
-        switch (winner)
-        {
-            case (byte)enPlayer.Boy:
-
-                return enPlayer.Boy;
-
-            case (byte)enPlayer.Girl:
-
-                return enPlayer.Girl;
-
-            default:
-                return enPlayer.Pl_Max;
-        }
-
-    }
 }

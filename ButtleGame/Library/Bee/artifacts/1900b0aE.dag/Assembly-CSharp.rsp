@@ -352,6 +352,7 @@
 "Assets/_K_Project/Battle/Judge.cs"
 "Assets/_K_Project/Battle/PlayerJump.cs"
 "Assets/_K_Project/Battle/_PlayerMove.cs"
+"Assets/_K_Project/Cursor.cs"
 "Assets/_K_Project/GameManager.cs"
 "Assets/_K_Project/Input/GetPlayerDevicesExample.cs"
 "Assets/_K_Project/Input/Inputs.cs"
