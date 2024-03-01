@@ -8,11 +8,21 @@ public class Title : MonoBehaviour
 {
     [SerializeField] private string nextScene;
 
-    [SerializeField] private Cursor cCursor; // Cursor クラスのインスタンス
+    [SerializeField] private Cursor cCursor;
+    [SerializeField] private SceneTransition transition;
 
-    void Start()
+    private void Start()
     {
         cCursor.GetComponent<Cursor>();
+        transition.GetComponent<SceneTransition>();
+    }
+
+    private void Update()
+    {
+        if (transition.finish_f)
+        {
+            SceneManager.LoadScene(nextScene);
+        }
     }
 
     /// <summary>
@@ -27,7 +37,7 @@ public class Title : MonoBehaviour
         switch (cur)
         {
             case 0:
-                SceneManager.LoadScene(nextScene);
+                transition.execute_f = true;
                 break;
             case 1:
                 Debug.Log("OptionScene");

@@ -357,6 +357,7 @@
 "Assets/_K_Project/Input/GetPlayerDevicesExample.cs"
 "Assets/_K_Project/Input/Inputs.cs"
 "Assets/_K_Project/Input/ReceiveNotificationExample.cs"
+"Assets/_K_Project/SceneTransition.cs"
 "Assets/_K_Project/Title/SkyBox.cs"
 "Assets/_K_Project/Title/Title.cs"
 "Assets/_K_Project/Title/Title_Easing.cs"
