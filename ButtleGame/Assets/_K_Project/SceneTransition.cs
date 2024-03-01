@@ -48,8 +48,8 @@ public class SceneTransition : MonoBehaviour
 
     public void ScaleMove(enInitState state)
     {
-        if (!execute_f) return;
-        if (finish_f) return;
+        if (!execute_f) return; // 実行フラグ
+        if (finish_f) return;   // 終了フラグ
 
         // 参照（最後に代入する）
         var scale = transform.localScale;
@@ -59,27 +59,29 @@ public class SceneTransition : MonoBehaviour
             case enInitState.In:
                 if(scale.x < maxScale && scale.y < maxScale)
                 {
-                    scale.x += scaleSpeed;
-                    scale.y += scaleSpeed;
+                    scale.x += scaleSpeed * Time.deltaTime;
+                    scale.y += scaleSpeed * Time.deltaTime;
                 }
                 else
                 {
                     scale.x = maxScale;
                     scale.y = maxScale;
                     finish_f = true;
+                    execute_f = false;
                 }
                 break;
             case enInitState.Out:
                 if (scale.x > minScale && scale.y > minScale)
                 {
-                    scale.x -= scaleSpeed;
-                    scale.y -= scaleSpeed;
+                    scale.x -= scaleSpeed * Time.deltaTime;
+                    scale.y -= scaleSpeed * Time.deltaTime;
                 }
                 else
                 {
                     scale.x = minScale;
                     scale.y = minScale;
                     finish_f = true;
+                    execute_f = false;
                 }
                 break;
         }

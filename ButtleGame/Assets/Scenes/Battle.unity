@@ -2222,10 +2222,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d020e69030d8244bc3c9dfa595c4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleSpeed: 1.2
+  scaleSpeed: 10
   finish_f: 0
   execute_f: 1
   initState: 1
+  minScale: 0
+  maxScale: 10
 --- !u!114 &1522091729
 MonoBehaviour:
   m_ObjectHideFlags: 0
