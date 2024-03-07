@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Title_Easing : MonoBehaviour
 {
     // インスペクタで変更できる値
-    [SerializeField] private float initX = 0.0f;      // 初期位置x
-    [SerializeField] private float moveSpeed = 50.0f; // 移動速度
-    [SerializeField] private float initScale = 0.2f;  // 初期スケール
+    [Header("タイトルText"),SerializeField] public TextMeshProUGUI tex;             // タイトル
+    [Header("初期X座標"),SerializeField] private float initX = 0.0f;      // 初期位置x
+    [Header("移動速度"),SerializeField] private float moveSpeed = 50.0f;  // 移動速度
+    [Header("初期大きさ"),SerializeField] private float initScale = 0.2f; // 初期スケール
 
     // プライベート変数
     
@@ -30,9 +32,9 @@ public class Title_Easing : MonoBehaviour
         if (!directing_f) return;
 
         // 中心に来るまで移動
-        if (transform.position.x < Screen.width * 0.5f)
+        if (tex.transform.position.x < Screen.width * 0.5f)
         {
-            transform.Translate(moveSpeed * Time.deltaTime, 0.0f, 0.0f);
+            tex.transform.Translate(moveSpeed * Time.deltaTime, 0.0f, 0.0f);
         }
         else
         {
@@ -47,15 +49,15 @@ public class Title_Easing : MonoBehaviour
     private void initialize()
     {
         // 初期位置を設定
-        var pos = transform.position;
+        var pos = tex.transform.position;
         pos.x = initX;
-        transform.position = pos;
+        tex.transform.position = pos;
 
         // 演出フラグをtrue
         directing_f = true;
 
         // 初期スケールを設定
-        transform.localScale = new Vector3(initScale, initScale, 0);
+        tex.transform.localScale = new Vector3(initScale, initScale, 0);
     }
 
     /// <summary>
@@ -81,7 +83,7 @@ public class Title_Easing : MonoBehaviour
         }
         // イージング拡大
         float easingScale = OutBounce(easingTime, easingTotalTime, 1.0f, 0.1f);
-        transform.localScale = new Vector3(easingScale, easingScale, 0);
+        tex.transform.localScale = new Vector3(easingScale, easingScale, 0);
     }
 
 

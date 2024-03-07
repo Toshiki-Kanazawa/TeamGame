@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class SceneTransition : MonoBehaviour
 
     [HideInInspector] public bool finish_f = false;
 
-    public bool execute_f = false;
+    // フェード中のフラグ
+    public bool IsTransition { get; private set; } = false;
 
     public enInitState initState;
 
@@ -41,15 +43,11 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-    void Update()
+    public async UniTask Execute(enInitState state)
     {
-        ScaleMove(initState);
-    }
-
-    public void ScaleMove(enInitState state)
-    {
-        if (!execute_f) return; // 実行フラグ
         if (finish_f) return;   // 終了フラグ
+        Debug.Log("トランジション中");
+        IsTransition = true;
 
         // 参照（最後に代入する）
         var scale = transform.localScale;
@@ -67,7 +65,8 @@ public class SceneTransition : MonoBehaviour
                     scale.x = maxScale;
                     scale.y = maxScale;
                     finish_f = true;
-                    execute_f = false;
+                    IsTransition = false;
+                    Debug.Log("トランジション終了");
                 }
                 break;
             case enInitState.Out:
@@ -81,7 +80,8 @@ public class SceneTransition : MonoBehaviour
                     scale.x = minScale;
                     scale.y = minScale;
                     finish_f = true;
-                    execute_f = false;
+                    IsTransition = false;
+                    Debug.Log("トランジション終了");
                 }
                 break;
         }

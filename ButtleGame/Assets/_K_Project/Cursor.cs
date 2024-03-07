@@ -133,4 +133,9 @@ public class Cursor : MonoBehaviour
         float y = transform.localScale.y;
         transform.localScale = new Vector2(x,y);
     }
+
+    public void CursorReset()
+    {
+        text.Clear();
+    }
 }
