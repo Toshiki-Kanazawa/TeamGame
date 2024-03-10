@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,11 @@ public class Judge : MonoBehaviour
 
     [Header("プレイヤーの種類")]
     [SerializeField] private List<M_CharactorStatus> status = new List<M_CharactorStatus>();
+
+    [Header("バトルシーンのスカイボックス"), SerializeField]
+    private Material skyBox;
+
+    private bool win_f = false;
 
     // プレイヤーの種類
     public enum enPlayer
@@ -53,24 +59,35 @@ public class Judge : MonoBehaviour
         JudgePlayer();
     }
 
+    private void Start()
+    {
+        // スカイボックスのマテリアルの取得
+        skyBox = new Material(RenderSettings.skybox);
+        RenderSettings.skybox = skyBox;
+    }
     void JudgePlayer()
     {
-        foreach (var playerStatus in status)
+        if (win_f) return;
+        foreach (var s in status)
         {
-            if (playerStatus.GetHitPoint() <= 0)
+            if (s.GetHitPoint() <= 0)
             {
-                if (playerStatus.gameObject.CompareTag("Player_Boy"))
+                if (s.gameObject.CompareTag("Player_Boy"))
                 {
                     WinnerPlayer = enPlayer.Girl;
                 }
-                else if (playerStatus.gameObject.CompareTag("Player_Girl"))
+                else if (s.gameObject.CompareTag("Player_Girl"))
                 {
                     WinnerPlayer = enPlayer.Boy;
                 }
-                SceneManager.LoadScene(nextScene);
+                StartCoroutine(Coroutine());
+                win_f = true;
             }
         }
     }
-
+    private IEnumerator Coroutine()
+    {
+        yield return SceneController.Instance.ChangeScene("Result", 0.02f * Time.deltaTime);
+    }
 
 }

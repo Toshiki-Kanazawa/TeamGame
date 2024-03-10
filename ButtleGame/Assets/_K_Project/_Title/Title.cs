@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using Cysharp.Threading.Tasks;
 
 public class Title : MonoBehaviour
 {
     [Header("次のシーン"),SerializeField] private string nextScene;
 
     [SerializeField] private Cursor cCursor;
-    [SerializeField] private SceneTransition transition;
 
     private void Start()
     {
         cCursor.GetComponent<Cursor>();
-        transition.GetComponent<SceneTransition>();
     }
 
     private void Update()
@@ -26,8 +23,7 @@ public class Title : MonoBehaviour
             switch (cur)
             {
                 case 0:
-                    SceneController.Instance.ChangeScene(nextScene,0.8f).Forget();
-                    Debug.Log("シーン繊維");
+                    StartCoroutine(Coroutine());
                     break;
                 case 1:
                     Debug.Log("OptionScene");
@@ -37,6 +33,11 @@ public class Title : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private IEnumerator Coroutine()
+    {
+        yield return SceneController.Instance.ChangeScene(nextScene, 0.02f * Time.deltaTime);
     }
 
     /// <summary>

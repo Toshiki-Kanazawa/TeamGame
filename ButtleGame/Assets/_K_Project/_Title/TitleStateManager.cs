@@ -47,7 +47,6 @@ public class TitleStateManager : MonoBehaviour
 
     void Start()
     {
-        transition.GetComponent<SceneTransition>();
     }
 
     void Update()

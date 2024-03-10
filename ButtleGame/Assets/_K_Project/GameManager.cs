@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Cysharp.Threading.Tasks;
+using System.Collections;
 
 [RequireComponent(typeof(SceneController))]
 public class GameManager : SingletonMonoBehaviour<GameManager>
@@ -59,14 +60,19 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     // --------- Unity の関数 ---------
 
-    private async UniTask Start()
+    private void Start()
     {
         // スカイボックスのマテリアルの取得
         skyBox = new Material(RenderSettings.skybox);
         RenderSettings.skybox = skyBox;
 
         // 最初のシーンを開く
-        SceneController.Instance.ChangeScene(startSceneName,0.8f).Forget();
+        StartCoroutine(Coroutine());
+    }
+
+    private IEnumerator Coroutine()
+    {
+        yield return SceneController.Instance.ChangeScene(startSceneName, 0.05f);
     }
 
     private void Update()
