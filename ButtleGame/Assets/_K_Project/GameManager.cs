@@ -66,7 +66,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         RenderSettings.skybox = skyBox;
 
         // Å‰‚ÌƒV[ƒ“‚ğŠJ‚­
-        SceneController.Instance.ChangeScene(startSceneName).Forget();
+        SceneController.Instance.ChangeScene(startSceneName,0.8f).Forget();
     }
 
     private void Update()

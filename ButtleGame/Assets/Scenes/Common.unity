@@ -154,8 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d020e69030d8244bc3c9dfa595c4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleSpeed: 1
-  finish_f: 0
+  scaleSpeed: 0.01
   initState: 0
   minScale: 0
   maxScale: 10
@@ -289,7 +288,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -400,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 367669359}
+  fade: {fileID: 0}
 --- !u!4 &454278402
 Transform:
   m_ObjectHideFlags: 0

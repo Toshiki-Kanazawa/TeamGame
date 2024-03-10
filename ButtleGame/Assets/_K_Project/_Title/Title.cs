@@ -26,7 +26,7 @@ public class Title : MonoBehaviour
             switch (cur)
             {
                 case 0:
-                    SceneController.Instance.ChangeScene(nextScene).Forget();
+                    SceneController.Instance.ChangeScene(nextScene,0.8f).Forget();
                     Debug.Log("ÉVÅ[Éìë@à€");
                     break;
                 case 1:

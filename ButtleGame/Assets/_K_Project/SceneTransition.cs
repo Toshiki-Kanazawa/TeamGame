@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cysharp.Threading.Tasks;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -12,10 +11,10 @@ public class SceneTransition : MonoBehaviour
         Out,
     }
 
-    [SerializeField,Tooltip("拡縮速度")]
+    [SerializeField, Tooltip("拡縮速度")]
     private float scaleSpeed = 1.0f;
 
-    [HideInInspector] public bool finish_f = false;
+    public bool finish_f { get; private set; } = false;
 
     // フェード中のフラグ
     public bool IsTransition { get; private set; } = false;
@@ -43,37 +42,22 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-    public async UniTask Execute(enInitState state)
+    public void Execute(enInitState state)
     {
-        if (finish_f) return;   // 終了フラグ
         Debug.Log("トランジション中");
         IsTransition = true;
 
         // 参照（最後に代入する）
         var scale = transform.localScale;
 
-        switch(state)
+        switch (state)
         {
-            case enInitState.In:
-                if(scale.x < maxScale && scale.y < maxScale)
-                {
-                    scale.x += scaleSpeed * Time.deltaTime;
-                    scale.y += scaleSpeed * Time.deltaTime;
-                }
-                else
-                {
-                    scale.x = maxScale;
-                    scale.y = maxScale;
-                    finish_f = true;
-                    IsTransition = false;
-                    Debug.Log("トランジション終了");
-                }
-                break;
-            case enInitState.Out:
-                if (scale.x > minScale && scale.y > minScale)
+            case enInitState.In: // シーン入り （丸を縮小する）
+                if (scale.x < maxScale && scale.y < maxScale)
                 {
                     scale.x -= scaleSpeed * Time.deltaTime;
                     scale.y -= scaleSpeed * Time.deltaTime;
+                    Debug.Log("実行中");
                 }
                 else
                 {
@@ -81,7 +65,24 @@ public class SceneTransition : MonoBehaviour
                     scale.y = minScale;
                     finish_f = true;
                     IsTransition = false;
-                    Debug.Log("トランジション終了");
+                    Debug.Log("イン トランジション終了");
+                }
+                break;
+            case enInitState.Out: // シーン終了 （丸を拡大する）
+                if (scale.x > minScale && scale.y > minScale)
+                {
+                    scale.x += scaleSpeed * Time.deltaTime;
+                    scale.y += scaleSpeed * Time.deltaTime;
+
+                    Debug.Log("実行中");
+                }
+                else
+                {
+                    scale.x = maxScale;
+                    scale.y = maxScale;
+                    finish_f = true;
+                    IsTransition = false;
+                    Debug.Log("アウト トランジション終了");
                 }
                 break;
         }
